@@ -1,0 +1,253 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  font-weight: 600;
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+.container {
+  position: fixed;
+  height: 100vh;
+  min-width: 50em;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 241px 1fr;
+  grid-template-rows: 9vh 1fr 10vh;
+  grid-template-areas:
+    "aside header"
+    "aside main"
+    "footer footer";
+}
+
+footer {
+  grid-area: footer;
+  background: black;
+}
+
+/* ---------- HEADER ---------- */
+header {
+  grid-area: header;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgb(25, 25, 25);
+}
+
+.user-btns {
+  margin-right: 3em;
+}
+.registrarte {
+  font-size: 11px;
+  font-family: sans-serif;
+  font-weight: 600;
+  letter-spacing: 2px;
+  border: none;
+  background-color: rgba(0, 0, 0, 0);
+  color: rgb(219, 217, 217);
+  width: 179px;
+  height: 38px;
+}
+
+.sesion {
+  font-size: 11px;
+  font-family: sans-serif;
+  font-weight: 700;
+  letter-spacing: 2px;
+  border: none;
+  border-radius: 20px;
+  width: 189px;
+  height: 38px;
+  background-color: white;
+  color: black;
+}
+.arrows {
+  display: flex;
+  margin-left: 1.5em;
+}
+
+.arrows button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  margin-right: 1em;
+  background: rgb(8, 8, 8);
+}
+.arrows button i {
+  font-size: 22px;
+  color: rgb(163, 162, 162);
+}
+
+/* --------- MAIN ---------- */
+main {
+  grid-area: main;
+  overflow: auto;
+  background: rgb(18, 18, 18);
+}
+main h2 {
+  margin-top: 2em;
+  margin-left: 1.5em;
+  font-size: 1.375em;
+  color: whitesmoke;
+}
+
+.posters-container {
+  display: flex;
+  max-width: 95%;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 1em;
+}
+.poster {
+  display: flex;
+  flex-direction: column;
+  width: 11.5em;
+  height: 16.5em;
+  margin-right: 1em;
+  background-color: #161616;
+  border-radius: 0.5em;
+  cursor: pointer;
+}
+.poster:hover {
+  background: rgb(40, 40, 40);
+}
+.posters-container:last-child {
+  margin-bottom: 3em;
+}
+
+.poster img {
+  max-width: 80%;
+  margin-top: 1em;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 0.5em;
+}
+.poster h3,
+h4 {
+  max-width: 80%;
+  margin: 0;
+  margin-top: 0.8em;
+  margin-left: 24px;
+}
+.poster h3 {
+  color: white;
+  font-size: 0.9em;
+}
+.poster h4 {
+  font-size: 0.8em;
+  color: rgb(170, 168, 168);
+}
+
+/* ---------ASIDE -------- */
+aside {
+  grid-area: aside;
+  display: flex;
+  flex-direction: column;
+  background: rgb(0, 0, 0);
+}
+
+aside a {
+  text-decoration: none;
+  color: rgb(184, 182, 182);
+  margin-top: 1.5em;
+  margin-left: 1.5em;
+  font-size: 13px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1em;
+}
+.logo img {
+  filter: invert(100%);
+  height: 45px;
+}
+.logo span {
+  font-size: 25px;
+  color: white;
+}
+
+.home,
+.search,
+.library,
+.like,
+.add {
+  display: flex;
+  align-items: center;
+}
+.home {
+  color: white;
+}
+.home img {
+  color: white;
+  filter: invert(100%);
+  height: 24px;
+  width: 24px;
+  margin-right: 15px;
+}
+.search img,
+.library img,
+.like img,
+.add img {
+  filter: invert(60%);
+  height: 25px;
+  margin-right: 15px;
+}
+.add {
+  margin-top: 3em;
+}
+
+/* ---------- FOOTER ---------- */
+
+footer {
+  background: rgb(255, 62, 205);
+  background: linear-gradient(
+    117deg,
+    rgba(255, 62, 205, 1) 0%,
+    rgba(76, 140, 255, 1) 100%
+  );
+}
+
+@media (min-width: 100em) {
+  .poster:nth-child(4n + 2) {
+    display: none;
+  }
+  .poster {
+    font-size: 32px;
+  }
+}
+@media (max-width: 44em) {
+  .poster:nth-child(1n + 3) {
+    display: none;
+  }
+  .poster {
+    font-size: 18px;
+  }
+}
+@media (max-width: 60em) {
+  .poster:nth-child(1n + 4) {
+    display: none;
+  }
+  .posters-container {
+    font-size: 20px;
+  }
+}
+@media (max-width: 80em) {
+  .poster:nth-child(1n + 5) {
+    display: none;
+  }
+  .posters-container {
+    font-size: 18px;
+  }
+}
